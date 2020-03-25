@@ -43,6 +43,7 @@ class Student
       end
     end 
     
+<<<<<<< HEAD
   def self.students_below_12th_grade
   sql = <<-SQL
     SELECT *
@@ -83,6 +84,15 @@ class Student
     LIMIT ?
     SQL
     DB[:conn].execute(sql, grade).map do |row|
+=======
+  def self.all_students_in_grade_9
+  sql = <<-SQL
+    SELECT *
+    FROM students
+    WHERE grade = 9 
+    SQL
+    DB[:conn].execute(sql).map do |row|
+>>>>>>> 644acdb2d828cb37a07285a8f17a4005b4e6815d
         self.new_from_db(row)
       end
     end 
